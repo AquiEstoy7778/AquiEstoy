@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aquiestoy7778.github.io/World-Landing/sitemap.xml

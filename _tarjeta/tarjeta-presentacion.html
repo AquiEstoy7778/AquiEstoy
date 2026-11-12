@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>AquíEstoy — Tarjeta de presentación (Carta)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+    /* ============================================================
+       Tarjeta de presentación — AquíEstoy
+       Hoja carta (8.5 × 11 in) · 10 tarjetas de 3.5 × 2 in
+       Página 1: frente · Página 2: dorso
+       Imprimir al 100% / tamaño real, sin márgenes.
+       ============================================================ */
+
+    @page {
+        size: 8.5in 11in;
+        margin: 0;
+    }
+
+    :root {
+        --rojo: #E12726;
+        --rojo-oscuro: #BE1B1A;
+        --gris: #2F3437;
+        --gris-2: #4B5257;
+        --gris-3: #6B7280;
+        --gris-4: #D1D5DB;
+        --borde: #E5E7EB;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+        background: #8A9099;
+        font-family: 'Inter', Arial, sans-serif;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* ---------- Hoja ---------- */
+    .hoja {
+        position: relative;
+        width: 8.5in;
+        height: 11in;
+        margin: 0 auto;
+        background: #FFFFFF;
+        overflow: hidden;
+        page-break-after: always;
+        break-after: page;
+    }
+
+    .hoja:last-child {
+        page-break-after: auto;
+        break-after: auto;
+    }
+
+    .plancha {
+        position: absolute;
+        top: 0.5in;
+        left: 0.75in;
+        width: 7in;
+        height: 10in;
+        display: grid;
+        grid-template-columns: repeat(2, 3.5in);
+        grid-auto-rows: 2in;
+    }
+
+    /* ---------- Tarjeta base ---------- */
+    .tarjeta {
+        position: relative;
+        width: 3.5in;
+        height: 2in;
+        overflow: hidden;
+        background: #FFFFFF;
+        outline: 0.5pt solid #E8E9EA;
+        outline-offset: -0.25pt;
+    }
+
+    /* ---------- Logotipo ---------- */
+    .logo {
+        display: inline-flex;
+        align-items: flex-end;
+        font-family: 'Poppins', Arial, sans-serif;
+        font-weight: 700;
+        letter-spacing: -.045em;
+        line-height: .92;
+        white-space: nowrap;
+    }
+
+    .logo-aqui, .logo-estoy { display: inline-block; }
+    .logo-aqui { color: var(--rojo); }
+    .logo-estoy { color: var(--gris); }
+
+    .logo-i { position: relative; display: inline-block; }
+
+    .logo-pin {
+        position: absolute;
+        left: 50%;
+        bottom: calc(100% - .30em);
+        width: .68em;
+        height: .68em;
+        transform: translateX(-50%);
+        color: var(--rojo);
+    }
+
+    /* ============================================================
+       FRENTE
+       ============================================================ */
+    .frente .franja {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: .085in;
+        height: 100%;
+        background: var(--rojo);
+    }
+
+    .frente .contenido {
+        position: absolute;
+        inset: 0;
+        padding: .18in .2in .16in .28in;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .frente .logo { font-size: 18.5pt; }
+
+    .frente .lema {
+        margin-top: 6pt;
+        font-size: 6.2pt;
+        font-weight: 600;
+        letter-spacing: .13em;
+        text-transform: uppercase;
+        color: var(--gris-3);
+    }
+
+    .frente .claim {
+        display: inline-block;
+        margin-top: 9pt;
+        padding: 2.4pt 7pt;
+        border: .5pt solid #F2C4C1;
+        border-radius: 2pt;
+        background: #FEF2F2;
+        font-size: 5.6pt;
+        font-weight: 700;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: var(--rojo-oscuro);
+    }
+
+    .frente .pie {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: .1in;
+    }
+
+    .frente .servicios {
+        font-size: 6.1pt;
+        font-weight: 500;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        color: var(--gris-3);
+        margin-bottom: 5pt;
+    }
+
+    .frente .servicios span { color: var(--rojo); }
+
+    .frente .tel {
+        display: flex;
+        align-items: center;
+        gap: 5pt;
+        font-size: 9.2pt;
+        font-weight: 700;
+        letter-spacing: -.01em;
+        color: var(--gris);
+    }
+
+    .frente .tel svg {
+        width: 9pt;
+        height: 9pt;
+        color: var(--rojo);
+        flex-shrink: 0;
+    }
+
+    .frente .qr {
+        position: absolute;
+        right: .2in;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        flex-shrink: 0;
+    }
+
+    .frente .qr img {
+        display: block;
+        width: .80in;
+        height: .80in;
+    }
+
+    .frente .qr span {
+        display: block;
+        margin-top: 3pt;
+        font-size: 4.8pt;
+        font-weight: 600;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+        color: var(--gris-3);
+    }
+
+    /* ============================================================
+       DORSO
+       ============================================================ */
+    .dorso {
+        background: var(--gris);
+        color: #FFFFFF;
+    }
+
+    .dorso::before {
+        content: "";
+        position: absolute;
+        top: -.55in;
+        right: -.55in;
+        width: 1.5in;
+        height: 1.5in;
+        border-radius: 50%;
+        background: rgba(225, 39, 38, .16);
+    }
+
+    .dorso::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: .045in;
+        background: var(--rojo);
+    }
+
+    .dorso .contenido {
+        position: absolute;
+        inset: 0;
+        padding: .16in .24in .2in;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .dorso .logo { font-size: 13.5pt; }
+    .dorso .logo-estoy { color: #FFFFFF; }
+    .dorso .logo-pin circle { fill: var(--gris); }
+
+    .dorso .qr-caja {
+        margin: 7pt 0 6pt;
+        padding: .055in;
+        background: #FFFFFF;
+        border-radius: .07in;
+        box-shadow: 0 4pt 10pt rgba(0, 0, 0, .28);
+    }
+
+    .dorso .qr-caja img {
+        display: block;
+        width: .78in;
+        height: .78in;
+    }
+
+    .dorso .instruccion {
+        font-size: 6.4pt;
+        font-weight: 600;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: var(--gris-4);
+    }
+
+    .dorso .tel {
+        margin-top: 3pt;
+        font-size: 9pt;
+        font-weight: 700;
+        color: #FFFFFF;
+        letter-spacing: .01em;
+    }
+
+    .dorso .tel .wa { color: var(--rojo); }
+
+    /* ============================================================
+       Pantalla: ayuda visual (no se imprime)
+       ============================================================ */
+    .nota {
+        position: fixed;
+        bottom: 14px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        background: #1F2325;
+        color: #FFFFFF;
+        font-size: 12px;
+        line-height: 1.45;
+        padding: 10px 16px;
+        border-radius: 8px;
+        max-width: 520px;
+        text-align: center;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, .35);
+    }
+
+    @media screen {
+        body { padding: 24px 0 90px; }
+        .hoja { box-shadow: 0 12px 40px rgba(0, 0, 0, .35); margin-bottom: 24px; }
+    }
+
+    @media print {
+        body { background: #FFFFFF; padding: 0; }
+        .nota { display: none; }
+        .hoja { box-shadow: none; margin: 0; }
+        .tarjeta { outline-color: #EAEAEA; }
+    }
+</style>
+</head>
+<body>
+
+<div class="nota">
+    Página 1: frente · Página 2: dorso.<br>
+    Imprimí al 100% (tamaño real), márgenes “Ninguno” y activá “Gráficos de fondo”.
+</div>
+
+<!-- ============================ HOJA 1 · FRENTES ============================ -->
+<div class="hoja">
+    <div class="plancha" id="frentes"></div>
+</div>
+
+<!-- ============================ HOJA 2 · DORSOS ============================ -->
+<div class="hoja">
+    <div class="plancha" id="dorsos"></div>
+</div>
+
+<template id="tpl-frente">
+    <div class="tarjeta frente">
+        <div class="franja"></div>
+        <div class="contenido">
+            <div>
+                <span class="logo" aria-label="AquíEstoy">
+                    <span class="logo-aqui">Aqu<span class="logo-i">i<svg class="logo-pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.3a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 13.1 7.2 13.1s7.2-7.7 7.2-13.1A7.2 7.2 0 0 0 12 2.3Z" fill="currentColor"/><circle cx="12" cy="9.5" r="2.7" fill="#fff"/></svg></span></span><span class="logo-estoy">Estoy</span>
+                </span>
+                <p class="lema">Presencia en Google Maps</p>
+                <p class="claim">Diagnóstico gratuito</p>
+            </div>
+
+            <div class="pie">
+                <div>
+                    <p class="servicios">Perfil <span>·</span> Reseñas <span>·</span> Capacitación</p>
+                    <p class="tel">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.13c-1.53 0-3.03-.41-4.34-1.19l-.31-.18-3.12.82.83-3.04-.2-.32a8.19 8.19 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24z"/></svg>
+                        +58 412-4090996
+                    </p>
+                </div>
+
+                <div class="qr">
+                    <img src="qr-whatsapp.png" alt="Código QR de WhatsApp de AquíEstoy">
+                    <span>Escribinos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template id="tpl-dorso">
+    <div class="tarjeta dorso">
+        <div class="contenido">
+            <span class="logo" aria-label="AquíEstoy">
+                <span class="logo-aqui">Aqu<span class="logo-i">i<svg class="logo-pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.3a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 13.1 7.2 13.1s7.2-7.7 7.2-13.1A7.2 7.2 0 0 0 12 2.3Z" fill="currentColor"/><circle cx="12" cy="9.5" r="2.7"/></svg></span></span><span class="logo-estoy">Estoy</span>
+            </span>
+
+            <div class="qr-caja">
+                <img src="qr-whatsapp.png" alt="Código QR de WhatsApp de AquíEstoy">
+            </div>
+
+            <p class="instruccion">Escaneá y pedí tu diagnóstico</p>
+            <p class="tel"><span class="wa">WhatsApp</span> · +58 412-4090996</p>
+        </div>
+    </div>
+</template>
+
+<script>
+    (function () {
+        const TOTAL = 10;
+        const frente = document.getElementById('frentes');
+        const dorso = document.getElementById('dorsos');
+        const tplF = document.getElementById('tpl-frente');
+        const tplD = document.getElementById('tpl-dorso');
+
+        for (let i = 0; i < TOTAL; i++) {
+            frente.appendChild(tplF.content.cloneNode(true));
+            dorso.appendChild(tplD.content.cloneNode(true));
+        }
+    })();
+</script>
+</body>
+</html>

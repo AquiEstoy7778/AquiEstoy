@@ -3,98 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World | Impulsa tu negocio en Google Maps</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Marca que JS está activo antes de pintar: si falla, todo el contenido se ve igual -->
+    <script>document.documentElement.classList.add('js');</script>
+
+    <title>AquíEstoy | Presencia en Google Maps para negocios locales</title>
+    <meta name="description" content="Optimizamos el perfil de tu negocio en Google Maps, instalamos códigos QR para conseguir reseñas y capacitamos a tu equipo. Diagnóstico gratuito.">
+    <meta name="theme-color" content="#E12726">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / redes sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="AquíEstoy">
+    <meta property="og:title" content="AquíEstoy | Presencia en Google Maps">
+    <meta property="og:description" content="Optimizamos el perfil de tu negocio en Google Maps, instalamos códigos QR para conseguir reseñas y capacitamos a tu equipo. Diagnóstico gratuito.">
+    <meta property="og:url" content="https://aquiestoy7778.github.io/World-Landing/">
+    <meta property="og:image" content="https://aquiestoy7778.github.io/World-Landing/assets/og-image.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="AquíEstoy — Presencia en Google Maps para negocios locales">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AquíEstoy | Presencia en Google Maps">
+    <meta name="twitter:description" content="Optimizamos tu perfil de Google Maps, instalamos códigos QR para conseguir reseñas y capacitamos a tu equipo.">
+    <meta name="twitter:image" content="https://aquiestoy7778.github.io/World-Landing/assets/og-image.png">
+
+    <link rel="canonical" href="https://aquiestoy7778.github.io/World-Landing/">
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- HERO SECTION -->
-<header class="hero">
-    <div class="container hero-grid">
-        <div class="hero-content">
-            <h1>¿Cuántos clientes satisfechos salen de tu negocio sin dejar rastro en internet?</h1>
-            <p>Transformamos tu excelente servicio físico en reseñas de 5 estrellas. Te ayudamos a construir una presencia en Google Maps atractiva, actualizada y que genere confianza instantánea, sin complicaciones técnicas.</p>
-            <a href="#contacto" class="btn-primary">Impulsa tu negocio hoy</a>
-        </div>
-        <div class="hero-image">
-            <img src="https://placehold.co/600x450/EFF6FF/2563EB?text=Tu+Negocio+en+Google+Maps" alt="Optimización de Google Maps para negocios locales">
-        </div>
-    </div>
-</header>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
 
-    <!-- SECCIÓN EL PROBLEMA -->
-    <section class="problema container">
-        <h2>Tu negocio vale la pena. Tu perfil digital debe demostrarlo.</h2>
-        <p>Muchos locales increíbles son invisibles en internet. Tienen perfiles de Google Maps abandonados, información desactualizada o reseñas de hace más de tres años que no dicen nada. Si un cliente nuevo te busca hoy y ve ese silencio digital, es probable que pase de largo. Es hora de cambiar eso.</p>
-    </section>
+    <!-- ================= NAVEGACIÓN ================= -->
+    <header class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#inicio" class="logo nav-logo" aria-label="AquíEstoy, ir al inicio">
+                <span class="logo-aqui">Aqu<span class="logo-i">i<svg class="logo-pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.3a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 13.1 7.2 13.1s7.2-7.7 7.2-13.1A7.2 7.2 0 0 0 12 2.3Z" fill="currentColor"/><circle cx="12" cy="9.5" r="2.7" fill="#fff"/></svg></span></span><span class="logo-estoy">Estoy</span>
+            </a>
 
-    <!-- SECCIÓN SERVICIOS -->
-    <section class="servicios bg-light">
-        <div class="container">
-            <h2>No es solo un código QR. Es una estrategia de crecimiento.</h2>
-            <div class="grid-servicios">
-    <div class="card">
-        <!-- Ícono de Ubicación / Maps -->
-        <svg class="icon-servicio" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-        </svg>
-        <h3>Optimización de Google Maps</h3>
-        <p>Rescatamos y configuramos tu perfil desde cero. Actualizamos tu información y mejoramos la estética para recibir a tus nuevos clientes digitales.</p>
-    </div>
-    <div class="card">
-        <!-- Ícono de Código QR -->
-        <svg class="icon-servicio" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-            <rect x="7" y="7" width="3" height="3"></rect>
-            <rect x="14" y="7" width="3" height="3"></rect>
-            <rect x="7" y="14" width="3" height="3"></rect>
-            <rect x="14" y="14" width="3" height="3"></rect>
-        </svg>
-        <h3>Ecosistema Físico-Digital</h3>
-        <p>Implementamos herramientas visuales con tecnología QR en tus mostradores, facilitando que el cliente satisfecho deje su testimonio en segundos.</p>
-    </div>
-    <div class="card">
-        <!-- Ícono de Equipo / Capacitación -->
-        <svg class="icon-servicio" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-        </svg>
-        <h3>Capacitación de Personal</h3>
-        <p><strong>Lo que no se habla, no se vende.</strong> Educamos a tu equipo con estrategias sencillas para invitar al cliente a dejar una calificación.</p>
-    </div>
-    <div class="card">
-        <!-- Ícono de Escudo / Confianza -->
-        <svg class="icon-servicio" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-        </svg>
-        <h3>Acompañamiento Constante</h3>
-        <p>Te enseñamos a prosperar en este entorno digital con herramientas prácticas, explicadas de forma clara y directa.</p>
-    </div>
-</div>
+            <nav class="nav-links" id="navLinks" aria-label="Navegación principal">
+                <a href="#servicios">Servicios</a>
+                <a href="#sobre-nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+                <a class="btn-primary btn-nav" href="https://wa.me/584124090996?text=Hola%20AquiEstoy%2C%20quiero%20mejorar%20el%20perfil%20de%20mi%20negocio%20en%20Google%20Maps." data-wa>Hablar por WhatsApp</a>
+            </nav>
 
-    <!-- SECCIÓN SOBRE WORLD -->
-    <section class="sobre-nosotros container sobre-grid">
-        <div class="sobre-image">
-            <!-- Imagen de marcador de posición temporal -->
-            <img src="https://placehold.co/500x500/1E293B/FFFFFF?text=Filosofia+World" alt="Filosofía de World">
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <div class="sobre-content">
-            <h2>Tecnología accesible para todos los negocios</h2>
-            <p>En World somos carismáticos, directos y enfocados en resultados. Negocio es negocio. No nos importan las apariencias ni tu nivel de experiencia con la tecnología. Nuestra única misión es proyectar tu negocio hacia el mundo, dándote las herramientas exactas para que tu esfuerzo físico brille en el entorno digital.</p>
-        </div>
-    </section>
+    </header>
 
-    <!-- FOOTER CORPORATIVO / CONTACTO -->
-    <footer id="contacto" class="footer-corporativo bg-dark">
+    <main id="main">
+
+        <!-- ================= HERO ================= -->
+        <section class="hero" id="inicio">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <p class="hero-badge"><span class="pulse" aria-hidden="true"></span> Presencia en Google Maps</p>
+                    <h1>¿Cuántos clientes satisfechos salen de tu negocio <span class="resaltado">sin dejar rastro</span> en internet?</h1>
+                    <p class="hero-text">Transformamos tu excelente servicio físico en reseñas de 5 estrellas. Construimos una presencia en Google Maps atractiva, actualizada y que genera confianza instantánea, sin complicaciones técnicas.</p>
+                    <div class="hero-actions">
+                        <a class="btn-primary" href="https://wa.me/584124090996?text=Hola%20AquiEstoy%2C%20quiero%20mejorar%20el%20perfil%20de%20mi%20negocio%20en%20Google%20Maps." data-wa>Impulsa tu negocio hoy</a>
+                        <a class="btn-ghost" href="#servicios">Ver cómo funciona</a>
+                    </div>
+                    <p class="hero-trust">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                        Diagnóstico gratuito · Sin compromiso · Respuesta el mismo día
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/hero-google-maps.svg" alt="Perfil de negocio optimizado en Google Maps con reseñas de cinco estrellas" width="600" height="450" fetchpriority="high">
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= EL PROBLEMA ================= -->
+        <section class="problema">
+            <div class="container">
+                <h2 class="reveal">Tu negocio vale la pena. Tu perfil digital debe demostrarlo.</h2>
+                <p class="reveal">Muchos locales increíbles son invisibles en internet. Tienen perfiles de Google Maps abandonados, información desactualizada o reseñas de hace más de tres años que no dicen nada. Si un cliente nuevo te busca hoy y ve ese silencio digital, es probable que pase de largo. Es hora de cambiar eso.</p>
+            </div>
+        </section>
+
+        <!-- ================= SERVICIOS ================= -->
+        <section class="servicios" id="servicios">
+            <div class="container">
+                <h2 class="reveal">No es solo un código QR. Es una estrategia de crecimiento.</h2>
+
+                <div class="grid-servicios">
+
+                    <article class="card reveal">
+                        <div class="icon-badge">
+                            <svg class="icon-servicio" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3>Optimización de Google Maps</h3>
+                        <p>Rescatamos y configuramos tu perfil desde cero. Actualizamos tu información y mejoramos la estética para recibir a tus nuevos clientes digitales.</p>
+                    </article>
+
+                    <article class="card reveal">
+                        <div class="icon-badge">
+                            <svg class="icon-servicio" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <rect x="7" y="7" width="3" height="3"></rect>
+                                <rect x="14" y="7" width="3" height="3"></rect>
+                                <rect x="7" y="14" width="3" height="3"></rect>
+                                <rect x="14" y="14" width="3" height="3"></rect>
+                            </svg>
+                        </div>
+                        <h3>Ecosistema Físico-Digital</h3>
+                        <p>Implementamos acrílicos y tarjetas con tecnología QR en tus mostradores, para que el cliente satisfecho deje su testimonio en segundos.</p>
+                    </article>
+
+                    <article class="card reveal">
+                        <div class="icon-badge">
+                            <svg class="icon-servicio" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3>Capacitación de Personal</h3>
+                        <p><strong>Lo que no se habla, no se vende.</strong> Educamos a tu equipo con estrategias sencillas para invitar al cliente a dejar una calificación.</p>
+                    </article>
+
+                    <article class="card reveal">
+                        <div class="icon-badge">
+                            <svg class="icon-servicio" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                <path d="m9 12 2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3>Acompañamiento Constante</h3>
+                        <p>Te enseñamos a prosperar en este entorno digital con herramientas prácticas, explicadas de forma clara y directa.</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SOBRE NOSOTROS ================= -->
+        <section class="sobre-nosotros" id="sobre-nosotros">
+            <div class="container sobre-grid">
+                <div class="sobre-image reveal">
+                    <img src="assets/filosofia-aquiestoy.svg" alt="Identidad visual de AquíEstoy: tecnología accesible para negocios locales" width="500" height="500" loading="lazy">
+                </div>
+                <div class="sobre-content reveal">
+                    <h2>Tecnología accesible para todos los negocios</h2>
+                    <p>En AquíEstoy somos carismáticos, directos y enfocados en resultados. <strong>Negocio es negocio.</strong> No nos importan las apariencias ni tu nivel de experiencia con la tecnología. Nuestra única misión es proyectar tu negocio hacia el mundo, dándote las herramientas exactas para que tu esfuerzo físico brille en el entorno digital.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER / CONTACTO ================= -->
+    <footer id="contacto" class="footer-corporativo">
         <div class="container footer-grid">
+
             <div class="footer-col">
-                <h2 class="footer-logo">World</h2>
+                <h2 class="footer-logo logo" aria-label="AquíEstoy">
+                    <span class="logo-aqui">Aqu<span class="logo-i">i<svg class="logo-pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.3a7.2 7.2 0 0 0-7.2 7.2c0 5.4 7.2 13.1 7.2 13.1s7.2-7.7 7.2-13.1A7.2 7.2 0 0 0 12 2.3Z" fill="currentColor"/><circle cx="12" cy="9.5" r="2.7"/></svg></span></span><span class="logo-estoy">Estoy</span>
+                </h2>
+                <p class="footer-lema">Presencia en Google Maps</p>
                 <p>Conectamos tu espacio físico con tu presencia digital mediante estrategias de visibilidad local en Google Maps.</p>
             </div>
+
             <div class="footer-col">
                 <h3>Nuestros Servicios</h3>
                 <ul>
@@ -104,16 +193,41 @@
                     <li>Asesoría Estratégica</li>
                 </ul>
             </div>
+
             <div class="footer-col">
                 <h3>¿Listo para crecer?</h3>
                 <p>Escríbenos y hagamos un diagnóstico de tu presencia actual.</p>
-                <a href="#" class="btn-primary">Hablar con un asesor</a>
+                <a href="https://wa.me/584124090996?text=Hola%20AquiEstoy%2C%20quiero%20mejorar%20el%20perfil%20de%20mi%20negocio%20en%20Google%20Maps." class="btn-primary" data-wa>Hablar con un asesor</a>
             </div>
+
         </div>
+
         <div class="footer-bottom">
-            <p>© 2026 World. Todos los derechos reservados.</p>
+            <p>© <span id="anio">2026</span> AquíEstoy. Todos los derechos reservados.</p>
         </div>
     </footer>
 
+    <!-- Botón flotante de WhatsApp -->
+    <a class="wa-float" href="https://wa.me/584124090996?text=Hola%20AquiEstoy%2C%20quiero%20mejorar%20el%20perfil%20de%20mi%20negocio%20en%20Google%20Maps." data-wa aria-label="Escribir por WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/>
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.13c-1.53 0-3.03-.41-4.34-1.19l-.31-.18-3.12.82.83-3.04-.2-.32a8.19 8.19 0 0 1-1.26-4.37c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24z"/>
+        </svg>
+    </a>
+
+    <!-- Datos estructurados para Google (negocio local) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "AquíEstoy",
+        "description": "Optimización de perfiles de Google Maps, ecosistema QR para reseñas y capacitación de personal para negocios locales.",
+        "url": "https://aquiestoy7778.github.io/World-Landing/",
+        "telephone": "+584124090996",
+        "priceRange": "$$"
+    }
+    </script>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
