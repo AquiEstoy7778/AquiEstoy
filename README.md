@@ -3,6 +3,10 @@
 Sitio de una página + tarjeta de presentación para **AquíEstoy**,
 agencia de presencia local en Google Maps.
 
+Servicios que muestra la página: optimización de Google Maps, ecosistema
+físico-digital con QR, **creación de páginas web**, capacitación de personal y
+acompañamiento constante. Cierra con una tarjeta de **diagnóstico gratuito**.
+
 HTML5 semántico + CSS3 puro + JavaScript sin dependencias.
 Listo para GitHub Pages.
 
@@ -117,7 +121,7 @@ con VS Code. Los datos actuales:
 - **WhatsApp:** +58 412-4090996
 - **QR:** apunta a `https://wa.me/584124090996?text=Hola%20AquiEstoy`
 - **Claim:** "Diagnóstico gratuito"
-- **Servicios:** Perfil · Reseñas · Capacitación
+- **Servicios:** Perfil · Reseñas · Web · Capacitación
 
 Si cambia el número, actualiza `generar_qr.py` y ejecuta:
 
@@ -134,6 +138,9 @@ Luego vuelve a generar el PDF (Chrome → Imprimir → Guardar como PDF).
 - **URL publicada:** https://aquiestoy7778.github.io/World-Landing/
 - Número de WhatsApp: **+58 412-4090996** → `wa.me/584124090996`
   (configurado en `script.js` y en los `href` de `index.html`).
+- **Mensajes de WhatsApp:** todos los botones usan el mensaje general de
+  `script.js`. Un botón puede llevar su propio texto agregando
+  `data-wa-msg="..."` (así lo hace el botón *Pedir diagnóstico*).
 - Paleta: rojo `#E12726`, gris `#2F3437`, fondos suaves `#F6F7F8` / `#FEF2F2`.
 - Tipografía: **Inter** (texto) y **Poppins** (logotipo).
 - Breakpoints: 1079, 980, 860, 768, 640 y 480 px.

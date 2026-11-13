@@ -17,9 +17,10 @@ const WHATSAPP_MENSAJE =
    1. Conectar todos los botones de WhatsApp
    ------------------------------------------------------------ */
 (function conectarWhatsApp() {
-    const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(WHATSAPP_MENSAJE)}`;
     document.querySelectorAll("[data-wa]").forEach(function (enlace) {
-        enlace.href = url;
+        /* Cada botón puede tener su propio mensaje con data-wa-msg */
+        const mensaje = enlace.getAttribute("data-wa-msg") || WHATSAPP_MENSAJE;
+        enlace.href = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensaje)}`;
         enlace.target = "_blank";
         enlace.rel = "noopener noreferrer";
     });

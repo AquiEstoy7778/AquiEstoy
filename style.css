@@ -485,7 +485,7 @@ h2 {
 
 .grid-servicios {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 22px;
     margin-top: 46px;
     text-align: left;
@@ -570,6 +570,61 @@ h2 {
 .card p strong {
     color: var(--texto);
     font-weight: 600;
+}
+
+/* Tarjeta de cierre: diagnóstico gratuito */
+.grid-servicios .card-cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(145deg, #D62422 0%, #A81615 100%);
+    border-color: transparent;
+    box-shadow: 0 18px 36px -22px rgba(225, 39, 38, .65);
+}
+
+.grid-servicios .card-cta::before {
+    display: none;
+}
+
+.grid-servicios .card-cta:hover {
+    border-color: transparent;
+    box-shadow: var(--sombra-roja);
+}
+
+.grid-servicios .card-cta h3 {
+    color: var(--blanco);
+    margin-bottom: 12px;
+}
+
+.grid-servicios .card-cta p {
+    color: var(--blanco);
+}
+
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    margin-top: 22px;
+    padding: 12px 22px;
+    border-radius: 10px;
+    background: var(--blanco);
+    color: var(--rojo-oscuro);
+    font-size: .95rem;
+    font-weight: 700;
+    line-height: 1.2;
+    box-shadow: 0 8px 18px -10px rgba(0, 0, 0, .55);
+    transition: background-color .25s ease, color .25s ease, transform .25s ease;
+}
+
+.btn-cta:hover {
+    background: var(--texto);
+    color: var(--blanco);
+    transform: translateY(-2px);
+}
+
+.btn-cta:active {
+    transform: translateY(0);
 }
 
 /* ------------------------------------------------------------
@@ -750,10 +805,9 @@ h2 {
     transform: none;
 }
 
-/* Escalonado en las tarjetas */
-.grid-servicios .card:nth-child(2) { transition-delay: .08s; }
-.grid-servicios .card:nth-child(3) { transition-delay: .16s; }
-.grid-servicios .card:nth-child(4) { transition-delay: .24s; }
+/* Escalonado en las tarjetas (grid de 3 columnas) */
+.grid-servicios .card:nth-child(3n+2) { transition-delay: .08s; }
+.grid-servicios .card:nth-child(3n) { transition-delay: .16s; }
 
 /* ------------------------------------------------------------
    14. Diseño adaptativo
@@ -967,6 +1021,11 @@ h2 {
     .btn-primary,
     .btn-ghost {
         width: 100%;
+        text-align: center;
+    }
+
+    .btn-cta {
+        align-self: stretch;
         text-align: center;
     }
 
