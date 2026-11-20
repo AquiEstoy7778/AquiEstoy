@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!--
+        Seguridad: la página solo puede cargar recursos propios y las fuentes de
+        Google. Bloquea cualquier script inyectado o de terceros no autorizado.
+        El script en línea de abajo se autoriza por su huella SHA-256: si alguien
+        lo modifica, el navegador lo rechaza automáticamente.
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
     <!-- Marca que JS está activo antes de pintar: si falla, todo el contenido se ve igual -->
     <script>document.documentElement.classList.add('js');</script>
 

@@ -44,12 +44,12 @@ pagina web/
 ## 2. Cómo subir los cambios a GitHub Pages
 
 El repositorio ya está publicado en
-**https://aquiestoy7778.github.io/World-Landing/**.
+**https://aquiestoy7778.github.io/AquiEstoy/**.
 Solo hay que reemplazar los archivos.
 
 ### Opción A — Desde la web de GitHub (sin instalar nada)
 
-1. Entra a `github.com` → tu repositorio (`World-Landing`).
+1. Entra a `github.com` → tu repositorio (`AquiEstoy`).
 2. Pulsa **Add file → Upload files**.
 3. Arrastra estos archivos desde la carpeta del proyecto:
    - `index.html`
@@ -135,7 +135,7 @@ Luego vuelve a generar el PDF (Chrome → Imprimir → Guardar como PDF).
 
 ## 4. Datos del sitio
 
-- **URL publicada:** https://aquiestoy7778.github.io/World-Landing/
+- **URL publicada:** https://aquiestoy7778.github.io/AquiEstoy/
 - Número de WhatsApp: **+58 412-4090996** → `wa.me/584124090996`
   (configurado en `script.js` y en los `href` de `index.html`).
 - **Mensajes de WhatsApp:** todos los botones usan el mensaje general de
@@ -145,13 +145,69 @@ Luego vuelve a generar el PDF (Chrome → Imprimir → Guardar como PDF).
 - Tipografía: **Inter** (texto) y **Poppins** (logotipo).
 - Breakpoints: 1079, 980, 860, 768, 640 y 480 px.
 
-La URL ya está configurada en `canonical`, `og:url`, `og:image`, `robots.txt`,
-`sitemap.xml` y en el JSON-LD. Si algún día cambia el nombre del repositorio o
-se usa un dominio propio, hay que actualizarla en esos seis lugares.
+La URL ya está configurada en `canonical`, `og:url`, `og:image`, `twitter:image`,
+`robots.txt`, `sitemap.xml` y en el JSON-LD. Si algún día cambia el nombre del
+repositorio o se usa un dominio propio, hay que actualizarla en esos lugares.
+
+> **Historial de URL:** el repositorio se llamaba `World-Landing`. Al renombrarlo
+> a `AquiEstoy` la dirección anterior (`.../World-Landing/`) deja de existir
+> (devuelve 404), así que cualquier enlace viejo en redes sociales, firmas o
+> publicaciones debe reemplazarse por la nueva.
 
 ---
 
-## 5. Pendientes
+## 5. Seguridad
+
+Este sitio es **estático**: no tiene usuarios, contraseñas, base de datos, panel de
+administración ni formularios. Por eso no puede sufrir las fallas típicas de las
+webs con login (token manipulable, escalada de privilegios, inyección SQL).
+
+Lo que sí se aplica y ya está configurado:
+
+- **CSP estricta** (`Content-Security-Policy` en el `<head>`): la página solo
+  carga recursos propios y las fuentes de Google. Cualquier script inyectado o
+  de terceros se bloquea.
+- **Script en línea autorizado por huella SHA-256**, no con `unsafe-inline`.
+  Si alguien modifica ese script, el navegador lo rechaza.
+- **`referrer` limitado** a `strict-origin-when-cross-origin`: al salir hacia
+  WhatsApp no se filtra la ruta completa de origen.
+- **HTTPS obligatorio** (GitHub Pages lo fuerza y envía HSTS).
+- **Sin cookies, sin rastreo, sin datos personales** más allá del WhatsApp que
+  el visitante decide pulsar.
+
+> ⚠️ **Si editas el `<script>` en línea del `<head>`** (el que agrega la clase
+> `js`), su huella cambia y el navegador lo bloqueará: las animaciones dejarán
+> de activarse (el contenido sigue visible). Recalcula la huella y pégala en la
+> CSP con:
+>
+> ```powershell
+> $s = [regex]::Match((Get-Content index.html -Raw), '<script>(.*?)</script>').Groups[1].Value
+> "sha256-" + [Convert]::ToBase64String([Security.Cryptography.SHA256]::Create().ComputeHash([Text.Encoding]::UTF8.GetBytes($s)))
+> ```
+
+### Lo que GitHub Pages no permite
+
+No se pueden definir cabeceras HTTP propias, así que quedan fuera
+`X-Frame-Options` (anti-clickjacking), `X-Content-Type-Options` y
+`Permissions-Policy`. En este sitio el impacto es nulo: no hay acciones
+sensibles que proteger. Si algún día se migra a un hosting propio (Netlify,
+Vercel, Cloudflare Pages), conviene agregarlas.
+
+### Reglas para las webs de tus clientes (cuando tengan login)
+
+1. La sesión va en cookie `HttpOnly; Secure; SameSite=Lax`, **nunca en
+   `localStorage`**: cualquier XSS podría leerla.
+2. El servidor valida **firma y rol en cada petición**. El rol nunca se toma del
+   navegador: si el cliente dice `admin`, se ignora hasta comprobarlo.
+3. Ocultar el botón "Administración" no protege nada: la ruta también debe
+   estar protegida en el servidor.
+4. Contraseñas con `Argon2` o `bcrypt`; nunca en texto plano ni con MD5/SHA-1.
+5. Límite de intentos en el login y tokens de acceso de vida corta.
+6. HTTPS en todo el sitio, también en las APIs internas.
+
+---
+
+## 6. Pendientes
 
 - [ ] **Subir los archivos nuevos a GitHub** (ver sección 2).
 - [ ] Fotos reales del negocio (reemplazar los `.svg` de `assets/`).
@@ -161,7 +217,7 @@ se usa un dominio propio, hay que actualizarla en esos seis lugares.
 
 ---
 
-## 6. Notas técnicas
+## 7. Notas técnicas
 
 - Las animaciones de aparición solo se activan si JavaScript carga; sin él,
   todo el contenido sigue visible.
